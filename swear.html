@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<body>
+
+    <script src="swear.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    debugger
+        var swear = new Swear();
+        var x = swear.value(2).isDefined().isNotNull().isString().done();
+        var y = swear.value(2).isDefined().isNotNull().isNumber().done();
+    </script>
+</body>
+
+</html>
