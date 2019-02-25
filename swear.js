@@ -154,9 +154,9 @@
         id: generateId(),
         rule: ruleName,
         value: this.currentValue,
-        showError: isObject(this.params.showError) ? this.params.showError[ruleName] : this.params.showError,
-        logError: isObject(this.params.logError) ? this.params.logError[ruleName] : this.params.logError,
-        errorMsg: isObject(this.params.errorMsg) ? this.params.errorMsg[ruleName] : this.params.errorMsg
+        showError: this.getShowError(ruleName),
+        logError: this.getLogError(ruleName),
+        errorMsg: this.getErrorMsg(ruleName)
       }
     },
 
@@ -166,6 +166,18 @@
         value: this.currentValue,
         rule: ruleName
       }
+    },
+
+    getShowError: function (ruleName) {
+      return isObject(this.params.showError) ? this.params.showError[ruleName] : this.params.showError;
+    },
+
+    getLogError: function (ruleName) {
+      return isObject(this.params.logError) ? this.params.logError[ruleName] : this.params.logError;
+    },
+
+    getErrorMsg: function (ruleName) {
+      return isObject(this.params.errorMsg) ? this.params.errorMsg[ruleName] : this.params.errorMsg;
     },
 
     runRule: function (ruleName, func) {
